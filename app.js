@@ -30,7 +30,7 @@ io.sockets.on("connection", function(socket) {
     // update nickanmes after disconnects
     function updateNicknames() {
         // send new nicknames to client
-        io.sockets.emit("username", nicknames);
+        io.sockets.emit("usernames", nicknames);
     }
               
     // receive message
@@ -52,3 +52,6 @@ io.sockets.on("connection", function(socket) {
         }
     });
 });
+
+// if all is fine
+console.log('Server running at localhost:3000');

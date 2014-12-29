@@ -17,6 +17,15 @@
             float: left;
             border: 1px #000000 solid;
         }
+
+        #nickWrap {
+            
+        }
+
+        #users {
+            float: left;
+        }
+
     </style>
 <body>
     <div id="nickWrap">
@@ -37,8 +46,7 @@
                 <input type="submit"></input>
             </form>
         </div>
-    <div id="users">
-    </div>
+    <div id="users"></div>
     </div>
     <script>
         // CLIENT
@@ -58,7 +66,6 @@
             $nickForm.submit(function(e) {
                 e.preventDefault();
                 socket.emit("new user", $nickBox.val(), function(data) {
-                    console.log(data);
                     if(data) {
                         $nickWrap.hide();
                         $contentWrap.show();
@@ -74,6 +81,7 @@
                 for(i = 0; i < data.length; i++) {
                     html += data[i] + "<br>";
                 }
+                console.log(html);
                 $users.html(html);
             });
             
