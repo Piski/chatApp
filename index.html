@@ -25,6 +25,15 @@
         #users {
             float: left;
         }
+        
+        .error {
+            color: red;
+        }
+        
+        .whisper {
+            color: grey;
+            font-style: italic;
+        }
 
     </style>
 <body>
@@ -88,14 +97,22 @@
             // send message
             $messageForm.submit(function(e) {
                 e.preventDefault();        // prevent the actual event & refresh of the page. just send the info to server
-                socket.emit("send message", $messageBox.val());
+                socket.emit("send message", $messageBox.val(), function(data) {
+                    $chat.append("<span class='error'" + data + "</span><br/>");
+                });
                 $messageBox.val("");
             });
             
             // receive message in client side
             socket.on("new message", function(data) {
-                $chat.append("<b>" + data.nick + ": </b>" + data.msg + "<br/>");
+                $chat.append("<span class='message' <b>" + data.nick + ": </b>" + data.msg + "</span><br/>");
             });
+            
+            // on whisper
+            socket.on("whisper", function(data) {
+                $chat.append("<span class='whisper' <b>" + data.nick + ": </b>" + data.msg + "</span><br/>");
+            });
+            
         });
     </script>
     
