@@ -35,7 +35,7 @@ io.sockets.on("connection", function(socket) {
     }
               
     // receive message
-    socket.on("send message", function(data) {
+    socket.on("send message", function(data, callback) {
         // in case user starts with spaces
         var msg = data.trim();
         if (msg.substr(0,3) === "/w ") {
@@ -48,8 +48,8 @@ io.sockets.on("connection", function(socket) {
                 if (name in users) {
                     // send only to one person
                     users[name].emit("whisper", { msg: msg, nick: socket.nickname });
-                    console.log("WHISTER");
                 } else {
+                    console.log("enter valid user");
                     callback("Enter a valid user");
                 }
             } else {

@@ -96,8 +96,9 @@
             
             // send message
             $messageForm.submit(function(e) {
-                e.preventDefault();        // prevent the actual event & refresh of the page. just send the info to server
+                e.preventDefault();        // prevent the actual event & refresh of the page. just send the 
                 socket.emit("send message", $messageBox.val(), function(data) {
+                    console.log("ERROR");
                     $chat.append("<span class='error'" + data + "</span><br/>");
                 });
                 $messageBox.val("");
@@ -105,11 +106,13 @@
             
             // receive message in client side
             socket.on("new message", function(data) {
-                $chat.append("<span class='message' <b>" + data.nick + ": </b>" + data.msg + "</span><br/>");
+                console.log("new message");
+               $chat.append("<span class='message' <b>" + data.nick + ": </b>" + data.msg + "</span><br/>");
             });
             
             // on whisper
             socket.on("whisper", function(data) {
+                console.log("whisper");
                 $chat.append("<span class='whisper' <b>" + data.nick + ": </b>" + data.msg + "</span><br/>");
             });
             
