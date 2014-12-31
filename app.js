@@ -48,12 +48,12 @@ io.sockets.on("connection", function(socket) {
                 if (name in users) {
                     // send only to one person
                     users[name].emit("whisper", { msg: msg, nick: socket.nickname });
+                    socket.emit("whisper", { msg: msg, nick: "to " + name });
                 } else {
-                    console.log("enter valid user");
-                    callback("Enter a valid user");
+                    callback("Enter valid user for your whisper");
                 }
             } else {
-                callback("Error! Please error message for your whisper");
+                callback("Enter a message for your whisper");
             }
         } else {
             // send back to client message and nickname
