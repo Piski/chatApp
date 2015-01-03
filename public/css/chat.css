@@ -1,0 +1,40 @@
+/*
+#4D505B
+#CF4858
+#16A79D
+#80628B
+#F4AC42
+*/
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+#chat {
+    height: 50vh;
+    overflow: auto;
+}
+
+#contentWrap {
+    display: none;
+}
+
+#chatWrap {
+    float: left;
+    border: 1px #000000 solid;
+}
+
+#users {
+    float: left;
+    background-color: blue;
+}
+
+.error {
+    color: red;
+}
+
+.whisper {
+    color: grey;
+    font-style: italic;
+}

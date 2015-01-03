@@ -6,11 +6,17 @@ var express = require("express"),
     users = {};
 
 // listen to server
-server.listen(3000);
+server.listen(3000, function() {
+    // if all is fine
+    console.log('Server running at localhost:3000');
+});
 
 app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/index.html")
+    res.sendFile(__dirname + "/index.html");
 });
+
+// get all static files from public folder
+app.use(express.static(__dirname + '/public'));
 
 // all the socket code goes inside this. Every user gets a own socket
 // for private messaging, save socket
@@ -27,13 +33,13 @@ io.sockets.on("connection", function(socket) {
             updateNicknames();
         }
     });
-    
+
     // update nickanmes after disconnects
     function updateNicknames() {
         // send new nicknames to client
         io.sockets.emit("usernames", Object.keys(users));
     }
-              
+
     // receive message
     socket.on("send message", function(data, callback) {
         // in case user starts with spaces
@@ -44,7 +50,7 @@ io.sockets.on("connection", function(socket) {
             var index = msg.indexOf(" ");
             if (index !== -1) {
                 var name = msg.substring(0, index);
-                var msg = msg.substring(index + 1);
+                msg = msg.substring(index + 1);
                 if (name in users) {
                     // send only to one person
                     users[name].emit("whisper", { msg: msg, nick: socket.nickname });
@@ -57,13 +63,13 @@ io.sockets.on("connection", function(socket) {
             }
         } else {
             // send back to client message and nickname
-            io.sockets.emit("new message", { msg: msg, nick: socket.nickname }); 
+            io.sockets.emit("new message", { msg: msg, nick: socket.nickname });
         }
         // same as emit but sends the message to everyone besides the sender itself
         //socket.broadcast.emit("new message", data);
     });
-    
-    socket.on("disconnect", function(data) {
+
+    socket.on("disconnect", function() {
         // if username not picked
         if(!socket.nickname) {
             return;
@@ -75,5 +81,5 @@ io.sockets.on("connection", function(socket) {
     });
 });
 
-// if all is fine
-console.log('Server running at localhost:3000');
+
+

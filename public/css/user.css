@@ -1,0 +1,92 @@
+/*
+#4D505B
+#CF4858
+#16A79D
+#80628B
+#F4AC42
+*/
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Exo', sans-serif;
+    font-weight: 400;
+}
+
+#nickContainer {
+    height: 100vh;
+    background-color: #4D505B;
+}
+
+#nickWrap {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+#nickError {
+    margin: 0;
+    padding: 0;
+    color: red;
+}
+
+#enterUser {
+    color: #CF4858;
+    width: 50%;
+    margin: 0 auto;
+    padding: 2%;
+    font-weight: 900;
+    font-size: 2em;
+    text-align: center;
+}
+
+#setNick {
+
+}
+
+.formContainer {
+    /*  */
+    width: 100vw;
+    margin: 0 auto;
+    /*  */
+}
+
+/*
+*   To center it. Margin-left in vw needs to be 50vw-(width/2)
+*/
+
+#nickname {
+    /* positioning */
+    margin-left: 40vw;
+    width: 20vw;
+    /* styling */
+    font-family: 'Exo', sans-serif;
+    font-size: 2em;
+    color: #16A79D;
+    background-color: white;
+    border-radius: 2px;
+    border: none;
+    text-align: center;
+}
+
+#nicknameButton {
+    /* positioning */
+    margin-left: 47vw;
+    margin-top: 5vh;
+    width: 6vw;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    /* styling */
+    font-family: 'Exo', sans-serif;
+    color: white;
+    background-color: #80628B;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#nicknameButton:hover {
+    background-color: #80629B;
+}
