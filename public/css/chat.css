@@ -11,30 +11,44 @@ html, body {
     margin: 0;
 }
 
-#chat {
-    height: 50vh;
-    overflow: auto;
-}
 
 #contentWrap {
     display: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: #4D505B;
 }
+
+/*
+*   To center it. Margin-left in vw needs to be 50vw-(width/2)
+*/
 
 #chatWrap {
     float: left;
-    border: 1px #000000 solid;
+    height: auto;
+    width: 50vw;
+    margin-left: 25vw;
+}
+
+#chat {
+    height: 70vh;
+    width: 50vw;
+    overflow: auto;
+    background-color: white;
+    color: #16A79D;
+    padding-top: 2px;
+    padding-left: 2px;
 }
 
 #users {
-    float: left;
-    background-color: blue;
+    float: right;
 }
 
 .error {
-    color: red;
+    color: #CF4858;
 }
 
 .whisper {
-    color: grey;
+    color: #4D505B;
     font-style: italic;
 }

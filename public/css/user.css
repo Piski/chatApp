@@ -9,13 +9,21 @@
 html, body {
     padding: 0;
     margin: 0;
-    font-family: 'Exo', sans-serif;
-    font-weight: 400;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    color: #F4AC42;
+    text-align: center;
+    font-size: 5em;
 }
 
 #nickContainer {
     height: 100vh;
     background-color: #4D505B;
+    font-family: 'Exo', sans-serif;
+    font-weight: 400;
 }
 
 #nickWrap {
@@ -25,9 +33,11 @@ html, body {
 }
 
 #nickError {
-    margin: 0;
+    margin: 20px auto;
     padding: 0;
-    color: red;
+    text-align: center;
+    width: 50vw;
+    color: #CF4858;
 }
 
 #enterUser {

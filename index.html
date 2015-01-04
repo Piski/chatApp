@@ -3,7 +3,6 @@
 
 <head>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="/lib/fancy.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/client.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/user.css">
@@ -13,26 +12,28 @@
     <body>
     <div id="nickContainer">
         <div id="nickWrap">
-            <p id="enterUser">Enter a username:</p>
-            <p id="nickError"></p>
+            <h1>IRChat</h1>
+            <p id="enterUser">Enter your username</p>
 
             <form id="setNick">
                 <div class="formContainer">
                     <input size="10" maxlength="10" id="nickname"></input>
                 </div>
                 <div class="formContainer">
-                    <input type="submit" id="nicknameButton"></input>
+                    <input type="submit" id="nicknameButton" value="Select"></input>
                 </div>
             </form>
         </div>
+        <p id="nickError"></p>
     </div>
 
         <div id="contentWrap">
+            <h1>IRChat</h1>
             <div id="chatWrap">
                 <div id="chat"></div>
                 <form id="send-message">
                     <input size="35" id="message"></input>
-                    <input type="submit"></input>
+                    <input type="submit" id="sendButton" value="Send"></input>
                 </form>
             </div>
             <div id="users"></div>

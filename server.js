@@ -23,7 +23,7 @@ app.use(express.static(__dirname + '/public'));
 io.sockets.on("connection", function(socket) {
     // users
     socket.on("new user", function(data, callback) {
-        // if username already exists, send false. Can send whatever you want
+        // if username already exists, send false.
         if(data in users) {
             callback(false);
         } else {
@@ -31,6 +31,9 @@ io.sockets.on("connection", function(socket) {
             socket.nickname = data;
             users[socket.nickname] = socket;
             updateNicknames();
+            // broadcast your arrival
+            console.log(socket.nickname + " joined the chat");
+            socket.broadcast.emit("new message", data);
         }
     });
 
