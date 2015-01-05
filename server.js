@@ -33,7 +33,8 @@ io.sockets.on("connection", function(socket) {
             updateNicknames();
             // broadcast your arrival
             console.log(socket.nickname + " joined the chat");
-            socket.broadcast.emit("new message", data);
+            //socket.broadcast.emit("new message", { msg: "joined the chat", nick: socket.nickname });
+            io.sockets.emit("new message", { msg: "joined the chat", nick: socket.nickname });
         }
     });
 
@@ -80,6 +81,8 @@ io.sockets.on("connection", function(socket) {
             // remove from array
             delete users[socket.nickname];
             updateNicknames();
+            io.sockets.emit("new message", { msg: "left the chat", nick: socket.nickname });
+            console.log(socket.nickname + " left the chat");
         }
     });
 });

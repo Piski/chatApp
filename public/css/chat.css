@@ -31,6 +31,7 @@ html, body {
 }
 
 #chat {
+    float:left;
     height: 70vh;
     width: 50vw;
     overflow: auto;
@@ -38,10 +39,20 @@ html, body {
     color: #16A79D;
     padding-top: 2px;
     padding-left: 2px;
+    border: 1vw solid #80628B;
+    border-radius: 5px;
 }
 
 #users {
-    float: right;
+    float: left;
+    width: 10vw;
+    height: 70vh;
+    padding-top: 2px;
+    padding-left: 2px;
+    background-color: white;
+    border: 1vw solid #80628B;
+    border-radius: 5px;
+    color: #16A79D;
 }
 
 .error {
@@ -51,4 +62,38 @@ html, body {
 .whisper {
     color: #4D505B;
     font-style: italic;
+}
+
+/* form size is chat area + borders */
+#send-message {
+    width: 50vw;
+}
+
+#message {
+   /* positioning */
+    width: 49vw;
+    margin-top: 1vh;
+    padding-left: 2px;
+    margin-left: 5px;
+    /* styling */
+    font-family: 'Exo', sans-serif;
+    font-size: 1em;
+    color: #16A79D;
+    background-color: white;
+    border-radius: 2px;
+    border: none;
+}
+
+#sendButton {
+    font-family: 'Exo', sans-serif;
+    color: white;
+    background-color: #80628B;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 10vw;
+}
+
+#sendButton:hover {
+    background-color: #80629B;
 }
