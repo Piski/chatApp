@@ -55,6 +55,8 @@
         // on whisper
         socket.on("whisper", function (data) {
             console.log("whisper");
-            $chat.append("<span class='whisper' <b>" + data.nick + ": </b>" + data.msg + "</span><br/>");
+            $chat.append("<span class='whisper' <b>" + data.nick + ": </b>" + data.msg + "</span><br/>").animate({
+                scrollTop: $chat.prop('scrollHeight')
+            }, 1);
         });
     });

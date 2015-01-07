@@ -33,7 +33,7 @@ html, body {
 #chat {
     float:left;
     height: 70vh;
-    width: 50vw;
+    width: 49vw;
     overflow: auto;
     background-color: white;
     color: #16A79D;
@@ -41,6 +41,7 @@ html, body {
     padding-left: 2px;
     border: 1vw solid #80628B;
     border-radius: 5px;
+    word-wrap: break-word;
 }
 
 #users {
@@ -66,7 +67,7 @@ html, body {
 
 /* form size is chat area + borders */
 #send-message {
-    width: 50vw;
+    width: 62vw;
 }
 
 #message {

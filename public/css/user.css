@@ -96,6 +96,7 @@ h1 {
     border: none;
     border-radius: 5px;
     font-size: 15px;
+    text-align: center;
 }
 
 #nicknameButton:hover {
