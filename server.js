@@ -48,7 +48,10 @@ io.sockets.on("connection", function(socket) {
     socket.on("send message", function(data, callback) {
         // in case user starts with spaces
         var msg = data.trim();
-        if (msg.substr(0,3) === "/w ") {
+
+        if (msg.substr(0,6) === "/help") {
+            socket.emit("help");
+        } else if (msg.substr(0,3) === "/w ") {
             // after 3 character
             msg = msg.substr(3);
             var index = msg.indexOf(" ");

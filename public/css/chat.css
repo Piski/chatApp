@@ -98,3 +98,7 @@ html, body {
 #sendButton:hover {
     background-color: #80629B;
 }
+
+.help {
+    color: #F4AC42;
+}
