@@ -62,7 +62,7 @@
         // help
         socket.on("help", function (data) {
             console.log("help");
-            var helpMessage = "/w name --> send private message";
+            var helpMessage = "/w 'name' - send private message";
             $chat.append("<span class='help'>" + helpMessage + "</span><br/>").animate({
                 scrollTop: $chat.prop('scrollHeight')
             }, 1);
